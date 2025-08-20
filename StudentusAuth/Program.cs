@@ -76,14 +76,15 @@ builder.Services.AddOpenIddict()
 builder.Services.AddHostedService<Worker>();
 
 builder.Services.AddControllers();
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApiDocument();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.ApplyMigrations();
-    app.MapOpenApi();
+    app.UseOpenApi();
+    app.UseSwaggerUi();
 }
 
 app.UseHttpsRedirection();
