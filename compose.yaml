@@ -1,6 +1,5 @@
 ﻿services:
   studentusauth:
-    image: studentusauth
     container_name: studentusauth.app
     build:
       context: .
