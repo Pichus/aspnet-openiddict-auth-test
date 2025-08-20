@@ -7,9 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDatabaseContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("Postgres"));
+    options.UseOpenIddict();
 });
 
-builder.Services.AddDefaultIdentity<IdentityUser>();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDatabaseContext>()
+    .AddDefaultTokenProviders()
+    .AddDefaultUI();
+
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();

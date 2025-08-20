@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace StudentusAuth.Data;
 
-public class ApplicationDatabaseContext : IdentityDbContext<IdentityUser>
+public class ApplicationDatabaseContext : IdentityDbContext<ApplicationUser>
 {
     public ApplicationDatabaseContext(DbContextOptions options)
         : base(options)
