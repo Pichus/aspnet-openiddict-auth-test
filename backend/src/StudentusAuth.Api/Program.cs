@@ -32,7 +32,8 @@ builder.Services.AddOpenIddict()
 
         options.UseAspNetCore()
             .EnableStatusCodePagesIntegration()
-            .EnableRedirectionEndpointPassthrough();
+            .EnableRedirectionEndpointPassthrough()
+            .DisableTransportSecurityRequirement();
         
         options.UseSystemNetHttp()
             .SetProductInformation(typeof(Program).Assembly);
@@ -65,7 +66,8 @@ builder.Services.AddOpenIddict()
             .EnableEndSessionEndpointPassthrough()
             .EnableTokenEndpointPassthrough()
             .EnableUserInfoEndpointPassthrough()
-            .EnableStatusCodePagesIntegration();
+            .EnableStatusCodePagesIntegration()
+            .DisableTransportSecurityRequirement();
     })
     .AddValidation(options =>
     {
@@ -75,6 +77,7 @@ builder.Services.AddOpenIddict()
 
 builder.Services.AddHostedService<Worker>();
 
+builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 builder.Services.AddOpenApiDocument();
 
@@ -94,6 +97,8 @@ app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapStaticAssets();
+app.MapRazorPages();
 app.MapControllers();
 
 app.Run();

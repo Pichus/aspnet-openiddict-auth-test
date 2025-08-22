@@ -4,5 +4,5 @@ namespace StudentusAuth.Data;
 
 public class ApplicationUser : IdentityUser
 {
-    public string HashedEmail { get; set; }
+    public string? HashedEmail { get; set; }
 }

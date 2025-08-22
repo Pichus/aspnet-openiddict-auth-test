@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentusAuth", "StudentusAuth\StudentusAuth.csproj", "{0AE0812F-C0BB-4001-BE13-5BDF559C95F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentusAuth.Api", "src\StudentusAuth.Api\StudentusAuth.Api.csproj", "{0AE0812F-C0BB-4001-BE13-5BDF559C95F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE7FE217-148F-4CB1-ADA2-486E6A587B8B}"
 	ProjectSection(SolutionItems) = preProject

@@ -29,11 +29,11 @@ public class Worker : IHostedService
                 DisplayName = "MVC client application",
                 RedirectUris =
                 {
-                    new Uri("https://localhost:44338/callback/login/local")
+                    new Uri("http://localhost:8080/callback/login/local")
                 },
                 PostLogoutRedirectUris =
                 {
-                    new Uri("https://localhost:44338/callback/logout/local")
+                    new Uri("http://localhost:8080/callback/logout/local")
                 },
                 Permissions =
                 {
